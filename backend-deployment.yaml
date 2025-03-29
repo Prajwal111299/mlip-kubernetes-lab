@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  # TODO: Add a unique name 
+  name: flask-backend-deployment  # Unique name for the backend deployment
 spec:
-  replicas:   # TODO: Adjust the replica count as desired
+  replicas: 3  # Adjust replica count as desired
   selector:
     matchLabels:
       app: flask-backend
@@ -14,7 +14,6 @@ spec:
     spec:
       containers:
       - name: flask-backend
-        # TODO: Replace <your-dockerhub-username> with your Docker Hub username
-        image: <your-dockerhub-username>/<backend-image-name>:1.0.0
+        image: prajwal111299/flask-backend:1.0.0  # Replace with your actual Docker Hub username
         ports:
         - containerPort: 5001
